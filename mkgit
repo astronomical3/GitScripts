@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: February 23, 2023
+# Date Modified: February 23, 2023
+
+# Description: 
+# Automatically create a repo when creating a new local project folder.
+
+# Usage:
+# If on Desktop: ./GitScripts/mkgit new_folder_name
+# If anywhere else: ~/Desktop/GitScripts/mkgit new_folder_name
+
+mkdir $1; cd $1
+git init

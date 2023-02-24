@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: February 24, 2023
+# Date Modified: February 24, 2023
+
+# Description:
+# Automatically create a clone of any remote Git repo (GitHub, GitLab, Gerrit, BitBucket, etc.) in any directory below the current directory.
+
+# Usage:
+# If on Desktop: ./GitScripts/mkclone existing_folder_name remote_repo_url
+# If anywhere else: ~/Desktop/GitScripts/mkclone existing_folder_name remote_repo_url
+
+cd $1
+git clone $2
+
