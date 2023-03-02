@@ -13,3 +13,11 @@
 
 mkdir $1; cd $1
 git init
+
+default_editor=$(git config --global core.editor)
+
+case "$default_editor" in
+    "code --wait" | "code -w") code .;;
+    "nova --wait" | "nova -w") nova .;;
+    *) echo "Clone created. Open or create a file for your directory in your text editor.";;
+esac
