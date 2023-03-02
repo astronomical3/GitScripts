@@ -14,3 +14,12 @@
 cd $1
 git clone $2
 
+default_editor="$(git config --global core.editor)"
+
+remote_repo_name=$(python3 ~/Desktop/GitScripts/remote_repo_parse.py $2)
+
+case "$default_editor" in
+    "code --wait" | "code -w") code $remote_repo_name;;
+    "nova --wait" | "nova -w") nova $remote_repo_name;;
+    *) echo "Clone created. Open or create a file for your directory in your text editor.";;
+esac
