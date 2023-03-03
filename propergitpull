@@ -11,7 +11,7 @@
 #
 # To be used in local repo.
 #
-# ~/Desktop/GitScripts/propergitpull
+# propergitpull
 
 read -p "Enter the name of the remote repo: " alias
 read -p "Enter the name of the branch you want to pull changes from: " branch
