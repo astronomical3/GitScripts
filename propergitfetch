@@ -11,7 +11,7 @@
 #
 # To be used within a Git repo.
 # 
-# ~/Desktop/GitScripts/propergitfetch
+# propergitfetch
 
 read -p "Enter the name of the remote repo you want to pull changes from: " alias
 read -p "Enter the name of the branch you want to pull changes from: " branch
