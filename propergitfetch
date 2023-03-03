@@ -2,7 +2,7 @@
 
 # Author: Victoria Brunner
 # Date Written: February 24, 2023
-# Date Modified: February 24, 2023
+# Date Modified: March 3, 2023
 
 # Description:
 # Automate full process of fetching new changes and information from a remote Git repo.  Great for local repos that have connections to multiple remote repos.
