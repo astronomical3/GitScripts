@@ -1,4 +1,4 @@
-//Used for parsing clone url to get local clone name and open up local clone in mkclone shell command.
+#Used for parsing clone url to get local clone name and open up local clone in mkclone shell command.
 
 import os
 import sys
