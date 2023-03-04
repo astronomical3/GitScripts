@@ -1,0 +1,37 @@
+#!/opt/homebrew/bin/bash
+
+# or.. #!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: March 3, 2023
+# Date Modified: March 3, 2023
+
+# Description:
+# Used for rebasing another branch onto main/master branch.  Means quick rebase.
+
+readarray -t branchlist < <(git branch)
+
+refined_branchlist=()
+for branch in ${branchlist[@]}; do 
+    refined_branchlist+=($(python3 branchnamerefine.py $branch))
+done
+
+next_refined_branchlist=()
+for branch in ${refined_branchlist[@]}; do
+    if [ $branch != "main" ]; then
+        next_refined_branchlist+=($branch)
+    fi
+done
+
+PS3="Select the branch you want to rebase onto main/master branch: "
+select branchchoice in next_refined_branchlist; do
+    for branchname in next_refined_branchlist; do
+        if [ $branchchoice = $branchname ]; then
+            sel_branch=$branchchoice
+            git switch $sel_branch
+            git merge main
+            break
+        fi
+    done
+    break
+done
