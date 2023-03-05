@@ -9,6 +9,9 @@
 # Description:
 # Used for rebasing another branch onto main/master branch.  Means quick rebase.
 
+# Usage:
+# qreb
+
 readarray -t branchlist < <(git branch)
 
 refined_branchlist=()
