@@ -33,6 +33,25 @@ Automation scripts that you can use for common Git workflows.
 
   * Usage: `quickpull`
   * Must be used within a Git repo!
+* `qreb` -- automates process of rebasing your current branch onto tip of `main` branch.
+
+  * Usage: `qreb`
+  * Must be used within a Git repo!
+* `mkbare` -- automates process of creating a cloned local bare repository from a local project folder
+
+  * Usage: `mkbare <current_folder_name>`
+  * Must be used within your current Git repo!
+* `bareclone` -- automates process of copying content from a local bare repo into a new project folder.
+
+  * Usage:
+    * 1. In one terminal: `git daemon --verbose --export-all --base-path=.`
+    * 2. In another terminal: `bareclone <new_folder_name_or_path> <existing_bare_repo_name>`
+  * Must be used in directory where bare repo of your choice exists.
+  * Both terminals must be at that directory for the 2-step process to work.
+* `localclone` -- automates process of cloning a local project folder containing a Git repo, such that the original repo is now the `origin` remote repo for the cloned project folder.
+
+  * Usage: `localclone <new_folder_name> <original_folder_name>`
+  * Creates clone in same directory the original folder is in.
 
 ## Any concerns or problems?
 
