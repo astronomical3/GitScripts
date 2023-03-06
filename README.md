@@ -1,6 +1,6 @@
 # **GitScripts**
 
-Automation scripts that you can use for common Git workflows.
+Automation scripts that you can use for various Git workflows.
 
 ---
 
