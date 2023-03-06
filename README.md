@@ -40,7 +40,7 @@ Automation scripts that you can use for common Git workflows.
 * `mkbare` -- automates process of creating a cloned local bare repository from a local project folder
 
   * Usage: `mkbare <current_folder_name>`
-  * Must be used within your current Git repo!
+  * Must be used within the directory of the existing project folder you want to create your bare repo from.
 * `bareclone` -- automates process of copying content from a local bare repo into a new project folder.
 
   * Usage:
