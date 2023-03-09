@@ -53,6 +53,10 @@ Automation scripts that you can use for various Git workflows.
 
   * Usage: `localclone <new_folder_name> <original_folder_name>`
   * Creates clone in same directory the original folder is in.
+* `openrepo` -- automates process of opening a project folder and its Git repo at a particular branch.  Creates a new branch if specified branch is not yet created.
+
+  * Usage: `openrepo <existing_folder_name_or_path> <branch_name>`
+  * Can use this in current repo or anywhere else.
 
 ## Any concerns or problems?
 
