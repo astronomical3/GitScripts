@@ -1,0 +1,42 @@
+#!/opt/homebrew/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: March 8, 2023
+# Date Modified: March 8, 2023
+
+# Description:
+# Open an existing repo at some specified branch.  Create new branch and open there if branch does not exist yet.
+
+# Usage:
+# openrepo <project_folder_path_or_name> <branch>
+
+cd $1;
+
+default_editor="$(git config --global core.editor)"
+
+readarray -t brancharray < <(git branch)
+
+refined_branchlist=()
+for branch in ${branchlist[@]}; do 
+    refined_branchlist+=($(python3 branchnamerefine.py $branch))
+done
+
+in_branch=false
+for sel_branch in ${refined_branchlist}; do
+    if [ $2 = $sel_branch ]; then
+        in_branch=true
+        break
+    fi
+done
+
+case $in_branch in
+    true) git checkout $2;;
+    false) git checkout -b $2;;
+esac
+
+case "$default_editor" in
+    "code --wait" | "code -w") code .;;
+    "nova --wait" | "nova -w") nova .;;
+    *) echo "Switched to branch $2.  Use ls to check contents of repo, touch to make a new file, or mkdir to create a new folder in this branch.";;
+esac
+
