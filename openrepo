@@ -25,6 +25,8 @@ fi
 
 
 
+
+
 case "$default_editor" in
     "code --wait" | "code -w") code .;;
     "nova --wait" | "nova -w") nova .;;
