@@ -57,6 +57,10 @@ Automation scripts that you can use for various Git workflows.
 
   * Usage: `openrepo <existing_folder_name_or_path> <branch_name>`
   * Can use this in current repo or anywhere else.
+* `viewbranches` -- allows one to view all connected remote repos, as well as all local and pulled remote branches for a particular local repo
+
+  * Usage: `viewbranches <folder_name_or_path>`
+  * Can use this in current repo or anywhere else.
 
 ## Any concerns or problems?
 
