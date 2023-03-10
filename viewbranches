@@ -19,9 +19,19 @@ git remote -v
 echo ""
 echo ""
 echo "Local Branches:"
-git branch
+echo "Merged: "
+git branch --merged
+echo ""
+echo "Not Merged: "
+git branch --no-merged
 
 echo ""
 echo ""
 echo "Pulled Remote Branches:"
-git branch -r
+echo "Merged: "
+git branch -r --merged
+echo ""
+echo "Not Merged: "
+git branch -r --no-merged
+echo ""
+echo ""
