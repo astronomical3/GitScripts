@@ -14,5 +14,5 @@
 # quickpull
 
 read -p "Enter the name of the branch to pull from: " branch
-git switch $branch
+git checkout $branch
 git pull

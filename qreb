@@ -31,8 +31,8 @@ select branchchoice in next_refined_branchlist; do
     for branchname in next_refined_branchlist; do
         if [ $branchchoice = $branchname ]; then
             sel_branch=$branchchoice
-            git switch $sel_branch
-            git merge main
+            git checkout $sel_branch
+            git rebase main
             break
         fi
     done

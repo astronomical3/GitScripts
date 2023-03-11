@@ -16,7 +16,7 @@
 read -p "Enter the name of the remote repo you want to pull changes from: " alias
 read -p "Enter the name of the branch you want to pull changes from: " branch
 
-git switch $branch
+git checkout $branch
 git fetch $alias $branch
 git status
 
