@@ -18,8 +18,6 @@ cd $1
 
 default_editor="$(git config --global core.editor)"
 
-remote_repo_name=$(python3 remote_repo_parse.py $2)
-
 case "$default_editor" in
     "code --wait" | "code -w") code .;;
     "nova --wait" | "nova -w") nova .;;
