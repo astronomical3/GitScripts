@@ -12,6 +12,8 @@
 # Usage:
 # qreb
 
+default_branch="main"
+
 readarray -t branchlist < <(git branch)
 
 refined_branchlist=()
@@ -21,7 +23,7 @@ done
 
 next_refined_branchlist=()
 for branch in ${refined_branchlist[@]}; do
-    if [ $branch != "main" ]; then
+    if [ $branch != $default_branch ]; then
         next_refined_branchlist+=($branch)
     fi
 done
@@ -32,7 +34,7 @@ select branchchoice in next_refined_branchlist; do
         if [ $branchchoice = $branchname ]; then
             sel_branch=$branchchoice
             git checkout $sel_branch
-            git rebase main
+            git rebase $default_branch --interactive
             break
         fi
     done
