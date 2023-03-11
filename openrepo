@@ -23,10 +23,6 @@ else
     git checkout -b $2
 fi
 
-
-
-
-
 case "$default_editor" in
     "code --wait" | "code -w") code .;;
     "nova --wait" | "nova -w") nova .;;
