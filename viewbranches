@@ -13,12 +13,13 @@
 
 cd $1
 
-echo "Connected Remote Repos:"
+echo ""
+echo "~~~~~~~~~~~~~~~~~~Connected Remote Repos~~~~~~~~~~~~~~~~~~"
 git remote -v
 
 echo ""
 echo ""
-echo "Local Branches:"
+echo "~~~~~~~~~~~~~~~~~~~~~~Local Branches~~~~~~~~~~~~~~~~~~~~~~"
 echo "Merged: "
 git branch --merged
 echo ""
@@ -27,7 +28,7 @@ git branch --no-merged
 
 echo ""
 echo ""
-echo "Pulled Remote Branches:"
+echo "~~~~~~~~~~~~~~~~~~Pulled Remote Branches~~~~~~~~~~~~~~~~~~"
 echo "Merged: "
 git branch -r --merged
 echo ""
