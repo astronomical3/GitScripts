@@ -21,18 +21,22 @@ echo ""
 echo ""
 echo "~~~~~~~~~~~~~~~~~~~~~~~~Local Branches~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Merged: "
-git branch --merged
+git branch --merged | grep "*"
+git branch --merged | grep -v "*"
 echo ""
 echo "Not Merged: "
-git branch --no-merged
+git branch --no-merged | grep "*"
+git branch --no-merged | grep -v "*"
 
 echo ""
 echo ""
 echo "~~~~~~~~~~~~~~~~~~~~Pulled Remote Branches~~~~~~~~~~~~~~~~~~~~"
 echo "Merged: "
-git branch -r --merged
+git branch -r --merged | grep "*"
+git branch -r --merged | grep -v "*"
 echo ""
 echo "Not Merged: "
-git branch -r --no-merged
+git branch -r --no-merged | grep "*"
+git branch -r --no-merged | grep -v "*"
 echo ""
 echo ""
