@@ -42,14 +42,11 @@ Automation scripts that you can use for various Git workflows.
   * Usage: `mkbare <new_folder_name_or_path>`
   * Can technically use this command anywhere, but best to use the command in the project folder where you want to create the bare repo folder.  The project folder now becomes the worktree.
   * You will need to take note of last instruction the command gives you before restarting the terminal or computer to finalize configuration of the bare repository.
-* `bareclone` -- automates process of copying content from a local bare repo into a new project folder.
+* `bareclone` -- automates process of creating a local bare repository from cloning another local or remote repository.
 
-  * Usage:
-    * 1. In one terminal: `git daemon --verbose --export-all --base-path=.`
-    * 2. In another terminal: `bareclone <new_folder_name_or_path> <existing_bare_repo_name>`
-  * Do _NOT_ include `.git` in `<existing_bare_repo_name>`!
-  * Must be used in directory where bare repo of your choice exists.
-  * Both terminals must be at that directory for the 2-step process to work.
+  * Usage: `bareclone <new_folder_name_or_path> <existing_folder_name_or_path>`
+  * Can be used anywhere!
+  * The second argument can be the name or path of a folder wth a Git repo on your local machine, or a remote Git repo on a service such as GitHub, BitBucket, GitLab, etc.
 * `localclone` -- automates process of cloning a local project folder containing a Git repo, such that the original repo is now the `origin` remote repo for the cloned project folder.
 
   * Usage: `localclone <new_folder_name> <original_folder_name>`
