@@ -9,9 +9,11 @@ Automation scripts that you can use for various Git workflows.
 * Must use `bash` shell -- right now, these are `bash` scripts.
 * Must also have Python 3 installed, since there are some Python helper scripts included.
 * Clone the repo to an easy-to-remember directory.
-* In that directory, be sure your files are readable, writeable, and executable by typing in your terminal:
-    * `chmod 777 GitScripts/<filename>`
-    * Remember, just do this on the filenames with no extension -- those are shell scripts.
+* In that directory, be sure your files are readable, writeable, and executable by copying this command in your terminal:
+    * `ls | grep-v "LICENSE" | grep -v "README.md" | grep -v "docs" | grep -v "branchnamerefine.py" | grep -v "remote_repo_parse.py" | xargs chmod 777 GitScripts/<filename>`
+    * This command should ensure all your shell scripts, which are the very core of GitScripts, are executable, readable, and rewritable.
+    * It is recommended that you execute this command every time you do a `git push` from this upstream repo, so you have scripts that are always ready to be executed.
+* Also, open up the `qreb` script and give the script your usual default branch name (e.g. `main` or `master`) at the `default_branch` variable (no spaces allowed in the line).
 * Go to `~/.bash_profile` or `~/.profile` or wherever you have a `$PATH` variable stored.  Add the full directory path to GitScripts into `$PATH`, then restart your computer so you can start using GitScripts as you would a regular Linux command.
 
 ---
