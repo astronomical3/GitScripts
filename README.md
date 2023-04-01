@@ -46,7 +46,7 @@ Automation scripts that you can use for various Git workflows.
 
   * Usage: `bareclone <new_folder_name_or_path> <existing_folder_name_or_path>`
   * Can be used anywhere!
-  * The second argument can be the name or path of a folder wth a Git repo on your local machine, or a remote Git repo on a service such as GitHub, BitBucket, GitLab, etc.
+  * The second argument can be the name or path of a folder with a Git repo on your local machine, or a remote Git repo on a service such as GitHub, BitBucket, GitLab, etc.
 * `localclone` -- automates process of cloning a local project folder containing a Git repo, such that the original repo is now the `origin` remote repo for the cloned project folder.
 
   * Usage: `localclone <new_folder_name> <original_folder_name>`
