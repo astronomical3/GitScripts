@@ -23,9 +23,9 @@ fullbaredir=$(pwd)
 cd ..
 worktreedir=$(pwd)
 
-echo "alias $barealias=\"/usr/bin/git --git-dir=$fullbaredir --worktree=$worktreedir\"" >> ~/.bashrc
+echo "alias $barealias=\"/usr/bin/git --git-dir=$fullbaredir --work-tree=$worktreedir\"" >> ~/.bashrc
 echo " " >> ~/.bashrc
-echo "alias $barealias=\"/usr/bin/git --git-dir=$fullbaredir --worktree=$worktreedir\"" >> ~/.zshrc
+echo "alias $barealias=\"/usr/bin/git --git-dir=$fullbaredir --work-tree=$worktreedir\"" >> ~/.zshrc
 echo " " >> ~/.zshrc
 echo "Initializing $worktreedir as worktree for bare repository aliased as $barealias."
 echo ""
