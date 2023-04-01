@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: February 24, 2023
+# Date Modified: March 3, 2023
+
+# Description:
+# Automatically create a clone of any remote Git repo (GitHub, GitLab, Gerrit, BitBucket, etc.) in any directory below the current directory.
+
+# Usage:
+# mkclone <existing_folder_name> <remote_repo_url>
+
+cd $1
+git clone $2
+
+default_editor="$(git config --global core.editor)"
+
+remote_repo_name=$(python3 GitScripts/remote_repo_parse.py $2)
+
+case "$default_editor" in
+    "code --wait" | "code -w") code $remote_repo_name;;
+    "nova --wait" | "nova -w") nova $remote_repo_name;;
+    *) echo "Clone created. Open or create a file for your directory in your text editor.";;
+esac
