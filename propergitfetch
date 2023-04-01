@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: February 24, 2023
+# Date Modified: March 3, 2023
+
+# Description:
+# Automate full process of fetching new changes and information from a remote Git repo.  Great for local repos that have connections to multiple remote repos.
+
+# Usage:
+#
+# To be used within a Git repo.
+# 
+# propergitfetch
+
+read -p "Enter the name of the remote repo you want to pull changes from: " alias
+read -p "Enter the name of the branch you want to pull changes from: " branch
+
+git checkout $branch
+git fetch $alias $branch
+git status
+
