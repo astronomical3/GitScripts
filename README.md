@@ -7,7 +7,8 @@ Automation scripts that you can use for various Git workflows.
 ## Requirements
 
 * Must use `bash` shell -- right now, these are `bash` scripts.
-* Download them to an easy-to-remember directory.
+* Must also have Python 3 installed, since there are some Python helper scripts included.
+* Clone the repo to an easy-to-remember directory.
 * Go to `~/.bash_profile` or `~/.profile` or wherever you have a `$PATH` variable stored.  Add the full directory path to GitScripts into `$PATH`, then restart your computer so you can start using GitScripts as you would a regular Linux command.
 
 ---
