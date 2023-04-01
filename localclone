@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: March 5, 2023
+# Date Modified: March 5, 2023
+
+# Description:
+# Automatically create a clone of a local project folder containing a git repo.  
+# Original local project folder's repo becomes your remote repo, origin.
+# Can use anywhere in the filesystem.
+
+# Usage:
+# localclone <new_folder_name_or_path> <existing_folder_name_or_path>
+
+cd ..
+git clone $2 $1 
+cd $1
+
+default_editor="$(git config --global core.editor)"
+
+case "$default_editor" in
+    "code --wait" | "code -w") code .;;
+    "nova --wait" | "nova -w") nova .;;
+    *) echo "Clone created. Open or create a file for your directory in your text editor.";;
+esac
