@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: March 10, 2023
+# Date Modified: March 10, 2023
+
+# Description:
+# View connected remote repos and branch lists of any local repo, including those pulled from remote repo.
+# Can be in anywhere in any repo.
+
+# Usage:
+# viewbranches <repo_path_or_name>
+
+cd $1
+
+echo ""
+echo "~~~~~~~~~~~~~~~~~~~~Connected Remote Repos~~~~~~~~~~~~~~~~~~~~"
+git remote -v
+
+echo ""
+echo ""
+echo "~~~~~~~~~~~~~~~~~~~~~~~~Local Branches~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Merged: "
+git branch --merged | cat
+echo ""
+echo "Not Merged: "
+git branch --no-merged | cat
+
+echo ""
+echo ""
+echo "~~~~~~~~~~~~~~~~~~~~Pulled Remote Branches~~~~~~~~~~~~~~~~~~~~"
+echo "Merged: "
+git branch -r --merged | cat
+echo ""
+echo "Not Merged: "
+git branch -r --no-merged | cat
+echo ""
+echo ""
