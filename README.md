@@ -41,6 +41,7 @@ Automation scripts that you can use for various Git workflows.
 
   * Usage: `mkbare <new_folder_name_or_path>`
   * Can technically use this command anywhere, but best to use the command in the project folder where you want to create the bare repo folder.  The project folder now becomes the worktree.
+  * You will need to take note of last instruction the command gives you before restarting the terminal or computer to finalize configuration of the bare repository.
 * `bareclone` -- automates process of copying content from a local bare repo into a new project folder.
 
   * Usage:
