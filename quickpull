@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: February 24, 2023
+# Date Modified: March 3, 2023
+
+# Description:
+# Automatically update a specified branch in local repo.
+
+# Usage:
+#
+# To be used in local repo.
+#
+# quickpull
+
+read -p "Enter the name of the branch to pull from: " branch
+git checkout $branch
+git pull
