@@ -61,10 +61,13 @@ Automation scripts that you can use for various Git workflows.
   * Usage: `viewbranches <folder_name_or_path>`
   * Can use this in current repo or anywhere else.
 
-## Any concerns or problems?
 
-* Be sure to [create an issue here](https://github.com/astronomical3/GitScripts/issues)
-
+## Wish to contribute?
+* You can ask to join the repo via my email (astrobrunner@gmail.com), or via the [Join our group] section in Discussions
+    * Read the [Contributor Covenant Code of Conduct](docs/CODE_OF_CONDUCT.md) and my [Contributing Guidelines](docs/CONTRIBUTING.md) before contributing.
+* You can also create an [issue](https://github.com/astronomical3/GitScripts/issues) to report a bug, a problem, or future enhancement.
+* You can discuss any ideas you have in our [Ideas](https://github.com/astronomical3/GitScripts/discussions/categories/ideas) section in Discussions, too.
+* You can fork the repo, create a branch from your fork, and create a Pull Request for the changes in your branch to merge with my `main` branch, as well.
 ## Wiki
 
 * Link to GitHub wiki [here](https://github.com/astronomical3/GitScripts/wiki)
