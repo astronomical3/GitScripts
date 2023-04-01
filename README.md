@@ -10,10 +10,11 @@ Automation scripts that you can use for various Git workflows.
 * Must also have Python 3 installed, since there are some Python helper scripts included.
 * Clone the repo to an easy-to-remember directory.
 * In that directory, be sure your files are readable, writeable, and executable by copying this command in your terminal:
-    * `ls | grep-v "LICENSE" | grep -v "README.md" | grep -v "docs" | grep -v "branchnamerefine.py" | grep -v "remote_repo_parse.py" | xargs chmod 777 GitScripts/<filename>`
-    * This command should ensure all your shell scripts, which are the very core of GitScripts, are executable, readable, and rewritable.
-    * It is recommended that you execute this command every time you do a `git push` from this upstream repo, so you have scripts that are always ready to be executed.
+  * `ls | grep-v "LICENSE" | grep -v "README.md" | grep -v "docs" | grep -v "branchnamerefine.py" | grep -v "remote_repo_parse.py" | xargs chmod 777 GitScripts/<filename>`
+  * This command should ensure all your shell scripts, which are the very core of GitScripts, are executable, readable, and rewritable.
+  * It is recommended that you execute this command every time you do a `git push` from this upstream repo, so you have scripts that are always ready to be executed.
 * Also, open up the `qreb` script and give the script your usual default branch name (e.g. `main` or `master`) at the `default_branch` variable (no spaces allowed in the line).
+* Remember to check `which bash` to check your actual path that you have the `bash` shell in.  Open up each of the scripts, and put that path for `bash` in the shebang line (The line that starts with `#!` at the top of the script).
 * Go to `~/.bash_profile` or `~/.profile` or wherever you have a `$PATH` variable stored.  Add the full directory path to GitScripts into `$PATH`, then restart your computer so you can start using GitScripts as you would a regular Linux command.
 
 ---
@@ -66,13 +67,14 @@ Automation scripts that you can use for various Git workflows.
   * Usage: `viewbranches <folder_name_or_path>`
   * Can use this in current repo or anywhere else.
 
-
 ## Wish to contribute?
+
 * You can ask to join the repo via my email (astrobrunner@gmail.com), or via the [Join our group] section in Discussions
-    * Read the [Contributor Covenant Code of Conduct](docs/CODE_OF_CONDUCT.md) and my [Contributing Guidelines](docs/CONTRIBUTING.md) before contributing.
+  * Read the [Contributor Covenant Code of Conduct](docs/CODE_OF_CONDUCT.md) and my [Contributing Guidelines](docs/CONTRIBUTING.md) before contributing.
 * You can also create an [issue](https://github.com/astronomical3/GitScripts/issues) to report a bug, a problem, or future enhancement.
 * You can discuss any ideas you have in our [Ideas](https://github.com/astronomical3/GitScripts/discussions/categories/ideas) section in Discussions, too.
 * You can fork the repo, create a branch from your fork, and create a Pull Request for the changes in your branch to merge with my `main` branch, as well.
+
 ## Wiki
 
 * Link to GitHub wiki [here](https://github.com/astronomical3/GitScripts/wiki)
