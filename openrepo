@@ -15,7 +15,7 @@
 cd $1;
 
 default_editor="$(git config --global core.editor)"
-branch_to_find="$(git branch | grep -wo $2)"
+branch_to_find="$(git branch | cat | grep -wo $2)"
 
 if [ $branch_to_find = $2 ]; then
     git checkout $2

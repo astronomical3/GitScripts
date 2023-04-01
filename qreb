@@ -14,7 +14,7 @@
 
 default_branch="main"
 
-readarray -t branchlist < <(git branch)
+readarray -t branchlist < <(git branch | cat)
 
 refined_branchlist=()
 for branch in ${branchlist[@]}; do 
