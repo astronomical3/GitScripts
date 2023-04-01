@@ -14,19 +14,18 @@
 
 default_branch="main"
 
-readarray -t branchlist < <(git branch | cat)
+branchlist=$(git branch | cat)
 
 refined_branchlist=()
 for branch in ${branchlist[@]}; do 
     refined_branchlist+=($(python3 GitScripts/branchnamerefine.py $branch))
 done
 
-next_refined_branchlist=()
-for branch in ${refined_branchlist[@]}; do
-    if [ $branch != $default_branch ]; then
-        next_refined_branchlist+=($branch)
-    fi
-done
+
+next_refined_branchlist=$(branchlist | grep -v "$default_branch")
+if [ next_refined_branchlist = branchlist ]; then
+    read -p "It looks like you do not have your usual default branch, $default_branch, in this repo.  Please specify the name of this repo's default branch: " default_branch
+fi
 
 PS3="Select the branch you want to rebase onto main/master branch: "
 select branchchoice in next_refined_branchlist; do
