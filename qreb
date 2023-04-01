@@ -1,0 +1,40 @@
+#!/opt/homebrew/bin/bash
+
+# or.. #!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: March 3, 2023
+# Date Modified: April 1, 2023
+
+# Description:
+# Used for rebasing another branch onto main/master branch.  Means quick rebase.
+
+# Usage:
+# qreb
+
+default_branch="main"
+
+branchlist=$(git branch | cat)
+
+refined_branchlist=()
+for branch in ${branchlist[@]}; do 
+    refined_branchlist+=($(python3 GitScripts/branchnamerefine.py $branch))
+done
+
+
+next_refined_branchlist=$(branchlist | grep -v "$default_branch")
+if [ next_refined_branchlist = branchlist ]; then
+    read -p "It looks like you do not have your usual default branch, $default_branch, in this repo.  Please specify the name of this repo's default branch: " default_branch
+fi
+
+PS3="Select the branch you want to rebase onto main/master branch: "
+select branchchoice in next_refined_branchlist; do
+    if [ $branchchoice = $branchname ]; then
+        sel_branch=$branchchoice
+        git checkout $sel_branch
+        git rebase $default_branch --interactive
+        break
+    else
+        echo "Invalid choice.  Please try again."
+    fi
+done
