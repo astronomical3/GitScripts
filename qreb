@@ -4,7 +4,7 @@
 
 # Author: Victoria Brunner
 # Date Written: March 3, 2023
-# Date Modified: March 3, 2023
+# Date Modified: April 1, 2023
 
 # Description:
 # Used for rebasing another branch onto main/master branch.  Means quick rebase.
@@ -29,13 +29,12 @@ fi
 
 PS3="Select the branch you want to rebase onto main/master branch: "
 select branchchoice in next_refined_branchlist; do
-    for branchname in next_refined_branchlist; do
-        if [ $branchchoice = $branchname ]; then
-            sel_branch=$branchchoice
-            git checkout $sel_branch
-            git rebase $default_branch --interactive
-            break
-        fi
-    done
-    break
+    if [ $branchchoice = $branchname ]; then
+        sel_branch=$branchchoice
+        git checkout $sel_branch
+        git rebase $default_branch --interactive
+        break
+    else
+        echo "Invalid choice.  Please try again."
+    fi
 done
