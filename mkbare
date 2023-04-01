@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: March 5, 2023
+# Date Modified: April 1, 2023
+
+# Description:
+# Automatically create a bare repository from any local Git repo.
+# Note: Worktree must be in a folder that you want to put the bare repo folder in.
+#       The parent directory of the bare repository folder is the worktree for it.
+
+# Usage:
+# mkbare <new_folder_name>
+
+
+
+read -p "Please enter an alias name for your bare repository: " barealias
+read -p "Please enter a short description for your bare repository (in quotes):" description_string
+
+git init --bare $1
+cd $1
+fullbaredir=$(pwd)
+cd ..
+worktreedir=$(pwd)
+
+echo "alias $barealias=\"/usr/bin/git --git-dir=$fullbaredir --work-tree=$worktreedir\"" >> ~/.bashrc
+echo " " >> ~/.bashrc
+echo "alias $barealias=\"/usr/bin/git --git-dir=$fullbaredir --work-tree=$worktreedir\"" >> ~/.zshrc
+echo " " >> ~/.zshrc
+echo "Initializing $worktreedir as worktree for bare repository aliased as $barealias."
+echo ""
+
+echo "Creating a new bare repository alias:"
+echo "$barealias : $description_string" >> ~/barerepolist.txt
+echo "Open ~/barerepolist.txt to view your bare repositories and their description."
+echo ""
+
+echo "Close your terminal, or restart the computer, and type the following command in your terminal to finalize the configuration:"
+echo "$barealias config --local status.showUntrackedFiles no"
+
+default_editor="$(git config --global core.editor)"
+
+case "$default_editor" in
+    "code --wait" | "code -w") code .;;
+    "nova --wait" | "nova -w") nova .;;
+    *) echo "Clone created. Open or create a file for your directory in your text editor.";;
+esac
