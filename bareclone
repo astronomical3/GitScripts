@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: March 5, 2023
+# Date Modified: April 1, 2023
+
+# Description:
+# Automatically create a bare repo from another repo (local or remote).
+# Can use this anywhere in filesystem where you want to put the bare repo.
+
+# Usage:
+# On one terminal, first run: git daemon --verbose --export-all --base_path=.
+# Then, on another terminal, run: bareclone <new_folder_name_or_path> <existing_bare_repo_name_or_path>
+# NOTE: The second argument can be a repo path on your local machine, or a clone link from a repository host (e.g. GitHub, Bitbucket, GitLab, etc.)
+
+git clone --bare $2 $1
+cd $1
+
+default_editor="$(git config --global core.editor)"
+
+case "$default_editor" in
+    "code --wait" | "code -w") code .;;
+    "nova --wait" | "nova -w") nova .;;
+    *) echo "Clone created. Open or create a file for your directory in your text editor.";;
+esac
