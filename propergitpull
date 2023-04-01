@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: February 24, 2023
+# Date Modified: March 3, 2023
+
+# Description:
+# Automate the full process of a pull you want from a branch in the remote repo.
+
+# Usage:
+#
+# To be used in local repo.
+#
+# propergitpull
+
+read -p "Enter the name of the remote repo: " alias
+read -p "Enter the name of the branch you want to pull changes from: " branch
+
+git checkout $branch
+git pull $alias $branch
