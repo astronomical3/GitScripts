@@ -7,10 +7,10 @@
 # Description:
 # Automatically create a clone of a local project folder containing a git repo.  
 # Original local project folder's repo becomes your remote repo, origin.
-# Must be in directory containing the folder you want to clone.
+# Can use anywhere in the filesystem.
 
 # Usage:
-# localclone <new_folder_name> <existing_folder_name>
+# localclone <new_folder_name_or_path> <existing_folder_name_or_path>
 
 cd ..
 git clone $2 $1 
