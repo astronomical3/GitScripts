@@ -9,6 +9,9 @@ Automation scripts that you can use for various Git workflows.
 * Must use `bash` shell -- right now, these are `bash` scripts.
 * Must also have Python 3 installed, since there are some Python helper scripts included.
 * Clone the repo to an easy-to-remember directory.
+* In that directory, be sure your files are readable, writeable, and executable by typing in your terminal:
+    * `chmod 777 GitScripts/<filename>`
+    * Remember, just do this on the filenames with no extension -- those are shell scripts.
 * Go to `~/.bash_profile` or `~/.profile` or wherever you have a `$PATH` variable stored.  Add the full directory path to GitScripts into `$PATH`, then restart your computer so you can start using GitScripts as you would a regular Linux command.
 
 ---
