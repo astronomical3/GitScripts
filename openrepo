@@ -1,0 +1,31 @@
+#!/opt/homebrew/bin/bash
+
+# or #!/bin/bash
+
+# Author: Victoria Brunner
+# Date Written: March 8, 2023
+# Date Modified: March 10, 2023
+
+# Description:
+# Open an existing repo at some specified branch.  Create new branch and open there if branch does not exist yet.
+
+# Usage:
+# openrepo <project_folder_path_or_name> <branch>
+
+cd $1;
+
+default_editor="$(git config --global core.editor)"
+branch_to_find="$(git branch | cat | grep -wo $2)"
+
+if [ $branch_to_find = $2 ]; then
+    git checkout $2
+else
+    git checkout -b $2
+fi
+
+case "$default_editor" in
+    "code --wait" | "code -w") code .;;
+    "nova --wait" | "nova -w") nova .;;
+    *) echo "Switched to branch $2.  Use ls to check contents of repo, touch to make a new file, or mkdir to create a new folder in this branch.";;
+esac
+
