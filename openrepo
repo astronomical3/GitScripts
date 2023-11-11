@@ -4,7 +4,7 @@
 
 # Author: Victoria Brunner
 # Date Written: March 8, 2023
-# Date Modified: March 10, 2023
+# Date Modified: November 11, 2023
 
 # Description:
 # Open an existing repo at some specified branch.  Create new branch and open there if branch does not exist yet.
@@ -15,13 +15,9 @@
 cd $1;
 
 default_editor="$(git config --global core.editor)"
-branch_to_find="$(git branch | cat | grep -wo $2)"
+current_branch="$(git rev-parse --abbrev-ref HEAD)"  #get name of current branch
+git checkout $branch
 
-if [ $branch_to_find = $2 ]; then
-    git checkout $2
-else
-    git checkout -b $2
-fi
 
 case "$default_editor" in
     "code --wait" | "code -w") code .;;
